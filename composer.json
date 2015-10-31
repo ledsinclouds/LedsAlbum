@@ -1,0 +1,31 @@
+{
+    "name": "ledsinclouds/leds-album",
+    "description": "ZF2 Album Module using Doctrine ",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "framework",
+        "zf2",
+        "album"
+    ],
+    "homepage": "https://github.com/ledsinclouds/LedsAlbum.git",
+    "minimum-stability": "dev",
+    "repositories": [
+		{
+			"type": "vcs", 
+			"url": "https://github.com/ledsinclouds/LedsAlbum.git"
+		}
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        'Application',	
+        'DoctrineModule',
+		'DoctrineORMModule',
+		'LedsAlbum'		
+    },
+    "autoload": {
+        "psr-0": {
+            "LedsAlbum\\": "src/"
+        }
+    }
+}   

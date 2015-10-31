@@ -1,0 +1,26 @@
+<?php
+$title = 'Artists List';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title) ?></h1>
+<p>
+    <a href="<?php echo $this->url('artist', array('action' => 'add')) ?>">Add Artist</a> |
+    <a href="<?php echo $this->url('leds-album', array('action' => 'index')) ?>">Manage Albums</a> 
+</p>
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Id</th>
+        <th>Artist</th>
+        <th>&nbsp;</th>
+    </tr>
+    <?php foreach ($artists as $artist): ?>
+    <tr>
+        <td><?php echo $this->escapeHtml($artist->id); ?></td>
+        <td><?php echo $this->escapeHtml($artist->name); ?></td>
+        <td>
+            <a href="<?php echo $this->url('artist', array('action' => 'edit', 'id' => $artist->id)); ?>">Edit</a> &Congruent;
+            <a href="<?php echo $this->url('artist', array('action' => 'delete', 'id' => $artist->id)); ?>">Delete</a>
+        </td>
+    </tr>
+    <?php endforeach; ?>
+</table>

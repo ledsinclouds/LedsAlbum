@@ -1,0 +1,16 @@
+<?php
+$title = 'Edit Album';
+$this->headTitle($title);
+$form = $this->form;
+$form->setAttribute('action', $this->url('leds-album', array('action' => 'edit', 'id' => $this->id)));
+?>
+<h1><?php echo $this->escapeHtml($title) ?></h1>
+
+<?php
+echo $this->form()->openTag($form);
+echo $this->formRow($form->get('id'));
+echo $this->formRow($form->get('title'));
+echo $this->formRow($form->get('artist_id'));
+echo $this->formRow($form->get('submit'));
+echo $this->form()->closeTag($form);
+?>

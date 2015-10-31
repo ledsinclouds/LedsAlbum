@@ -1,0 +1,28 @@
+<?php
+$title = 'Albums List';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title) ?></h1>
+<p>
+    <a href="<?php echo $this->url('leds-album', array('action' => 'add')) ?>">Add Album</a> |
+    <a href="<?php echo $this->url('artist', array('action' => 'index')) ?>">Manage Artists</a> 
+</p>
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Artist</th>
+        <th>&nbsp;</th>
+    </tr>
+    <?php foreach ($albums as $album): ?>
+        <tr>
+            <td><?php echo $this->escapeHtml($album->id); ?></td>
+            <td><?php echo $this->escapeHtml($album->title); ?></td>
+            <td><?php echo $this->escapeHtml($album->artist->name); ?></td>
+            <td>
+                <a href="<?php echo $this->url('leds-album', array('action' => 'edit', 'id' => $album->id)) ?>">Edit</a> &Congruent;
+                <a href="<?php echo $this->url('leds-album', array('action' => 'delete', 'id' => $album->id)) ?>">Delete</a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</table>

@@ -1,0 +1,14 @@
+<?php
+$title = 'Delete Album';
+$this->headTitle($title);
+$url = $this->url('leds-album', array('action' => 'delete', 'id'=>$this->id));
+?>
+<h1><?php echo $this->escapeHtml($title) ?></h1>
+Etes-vous sûr de vouloir supprimer la page <?php $this->escapeHtml($album->title) ?>" ?
+<form action="<?php echo $url ?>" method="post">
+    <div>
+        <input type="hidden" name="id" value="<?php echo $album->id ?>" />
+        <input type="submit" name="del" value="Yes" />
+        <input type="submit" name="del" value="Not" />
+    </div>
+</form>
